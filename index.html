@@ -1,20 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/index.css">
-	<title>ohusq's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ohusq's site</title>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            margin: 0;
+            line-height: 1.6;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            margin-bottom: 25px; /* margin for contact footer */
+        }
+
+        a {
+            text-decoration: none;
+            color: #0f507b;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffdd57;
+        }
+
+        header {
+            background-color: rgb(71, 163, 255);
+            color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            margin-left: 30px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            margin-right: 25px;
+        }
+
+        .nav-links a {
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .container-main {
+            text-align: center;
+            padding: 175px 20px 120px 20px; /* THIS IS THE PADDING FOR THE TITLE */
+        }
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .description {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        button {
+            background-color: #1567ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 15px 30px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0a3e5c;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #container-portfolio {
+            padding: 70px 20px 25px;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(30% - 40px);
+            text-align: center;
+        }
+
+        .project h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .project p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .project a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #1567ff;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .project a:hover {
+            background-color: #0a3e5c;
+        }
+
+        /* Contact page styles */
+        .container-contact {
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 70px;
+            max-width: 600px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+        }
+
+        .contact-info p {
+            text-align: center;
+        }
+
+        .slider {
+            height: 250px;
+            margin: auto;
+            position: relative;
+            width: 90%;
+            display: grid;
+            place-items: center;
+        }
+
+        .slide-track {
+            display: flex;
+            width: calc(250px * 5);
+            overflow: hidden;
+        }
+
+        .slide {
+            height: 200px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .slider img {
+            width: 100%;
+        }
+
+        
+    </style>
 </head>
 <body>
-	<div class="container-title">
-		<h1 class="name"   >ohusq's website</h1>
-		<h2 class="hobby"  ><a href="https://github.com/ohusq">Developer</a></h2>
-		<h1 class="contact">
-			<a href="https://discord.gg/m3vsHsK5">
-				Contact
-			</a>
-		</h1>
-	</div>
+    <header>
+        <a href="/index.html" class="name">Menno | ohusq</a>
+        <div class="nav-links">
+            <a href="mailto:mennom2007@gmail.com">Contact</a>
+            <a href="/index.html">Home</a>
+            <a href="https://github.com/ohusq" target="_blank">Github</a>
+        </div>
+    </header>
+    <div class="container-main">
+        <h1 class="title">Hello, I'm ohusq!</h1>
+        <p class="description">I'm a 16 year old developer from the Netherlands</p>
+        <a href="#container-portfolio"><button>My Portfolio</button></a>
+    </div>
+
+    <!-- ngl these logos kinda lit -->
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <img src="thumbnails/Cplusplus_logo.png" alt="C++ Logo">
+            </div>
+
+            <div class="slide">
+                <img src="thumbnails/css_logo.png" alt="CSS Logo">
+            </div>
+
+            <div class="slide">
+                <img src="thumbnails/html_logo.png" alt="HTML Logo">
+            </div>
+
+            <div class="slide">
+                <img src="thumbnails/git_logo.png" alt="Git Logo">
+            </div>
+
+            <div class="slide">
+                <img src="thumbnails/python_logo.png" alt="Python Logo">
+            </div>
+
+            <div class="slide">
+                <img src="thumbnails/shopify_logo.png" alt="Shopify Logo">
+            </div>
+
+            <div class="slide">
+                <img src="thumbnails/lua_logo.png" alt="Lua Logo">
+            </div>
+        </div>
+    </div>
+
+    <div id="container-portfolio">
+        <h2 class="title">My Projects</h2>
+        <div class="projects">
+            <div class="project project-1">
+                <h3>This website &#x1F60E;</h3>
+                <p>
+                    I decided it would be time to make a cool website!
+                    <br>This website is also hosted on 281107.xyz
+                    <br><br>
+                </p>
+                <a href="https://github.com/ohusq/ohusq.github.io" target="_blank">Learn More</a>
+            </div>
+
+            <div class="project project-2">
+                <h3>Roblox Username Generator</h3>
+                <p>
+                    This is a project I made in a rush and is not that good actually
+                    but I have to put something here right... 🤷
+                    <br><br>
+                </p>
+                <a href="https://github.com/ohusq/username-gen">Learn More</a>
+            </div>
+
+            <div class="project project-3">
+                <h3>Koster ICT Website</h></h3>
+                <p>
+                    Got accepted to work on a shopify website, using custom liquid elements
+                    and using custom CSS for some images As of <code>16th of June 2024</code>
+                    it has been finished completely!
+                </p>
+                <a href="https://kosterstaphorst.nl" target="_blank">View the Website</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact section -->
+    <div class="container-contact">
+        <h2 class="title"><a href="mailto:mennom2007@gmail.com">Contact Me</a></h2>
+    </div>
+
+    <footer>
+        &copy; 2024 ohusq. All rights reserved.
+    </footer>
 </body>
 </html>
