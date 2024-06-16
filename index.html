@@ -42,23 +42,51 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            margin-left: 30px;
         }
 
         .name {
             font-size: 24px;
             font-weight: 600;
+            margin-left: 15px;
         }
 
         .nav-links {
             display: flex;
             gap: 15px;
-            margin-right: 25px;
+            margin-right: 15px;
         }
 
         .nav-links a {
             font-size: 18px;
             transition: color 0.3s ease;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        .nav-links.mobile {
+            display: none;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+        }
+
+        .nav-links.mobile a {
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .container-main {
@@ -170,40 +198,67 @@
             text-align: center;
         }
 
-        .slider {
-            height: 250px;
-            margin: auto;
-            position: relative;
-            width: 90%;
-            display: grid;
-            place-items: center;
-        }
-
-        .slide-track {
+        .container-logos {
             display: flex;
-            width: calc(250px * 5);
-            overflow: hidden;
-        }
-
-        .slide {
-            height: 200px;
-            width: 250px;
-            display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 15px;
+            gap: 20px; /* Adjust spacing between images */
+            flex-wrap: wrap; /* Allow images to wrap to the next line */
+            padding: 20px; /* Optional: Add padding around the logos */
         }
 
-        .slider img {
-            width: 100%;
+        .container-logos img {
+            max-width: 100%;
+            height: auto;
+            max-height: 150px; /* Adjust the maximum height of the logos */
         }
 
-        
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.mobile {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .container-main {
+                padding: 140px 20px 100px 20px;
+            }
+
+            .projects {
+                flex-direction: column;
+            }
+
+            .project {
+                flex: 1 1 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <a href="/index.html" class="name">Menno | ohusq</a>
         <div class="nav-links">
+            <a href="mailto:mennom2007@gmail.com">Contact</a>
+            <a href="/index.html">Home</a>
+            <a href="https://github.com/ohusq" target="_blank">Github</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links mobile">
             <a href="mailto:mennom2007@gmail.com">Contact</a>
             <a href="/index.html">Home</a>
             <a href="https://github.com/ohusq" target="_blank">Github</a>
@@ -215,38 +270,16 @@
         <a href="#container-portfolio"><button>My Portfolio</button></a>
     </div>
 
-    <!-- ngl these logos kinda lit -->
-    <div class="slider">
-        <div class="slide-track">
-            <div class="slide">
-                <img src="thumbnails/Cplusplus_logo.png" alt="C++ Logo">
-            </div>
-
-            <div class="slide">
-                <img src="thumbnails/css_logo.png" alt="CSS Logo">
-            </div>
-
-            <div class="slide">
-                <img src="thumbnails/html_logo.png" alt="HTML Logo">
-            </div>
-
-            <div class="slide">
-                <img src="thumbnails/git_logo.png" alt="Git Logo">
-            </div>
-
-            <div class="slide">
-                <img src="thumbnails/python_logo.png" alt="Python Logo">
-            </div>
-
-            <div class="slide">
-                <img src="thumbnails/shopify_logo.png" alt="Shopify Logo">
-            </div>
-
-            <div class="slide">
-                <img src="thumbnails/lua_logo.png" alt="Lua Logo">
-            </div>
-        </div>
+    <div class="container-logos">
+        <img src="thumbnails/Cplusplus_logo.png" alt="C++ Logo">
+        <img src="thumbnails/css_logo.png" alt="CSS Logo">
+        <img src="thumbnails/html_logo.png" alt="HTML Logo">
+        <img src="thumbnails/git_logo.png" alt="Git Logo">
+        <img src="thumbnails/python_logo.png" alt="Python Logo">
+        <img src="thumbnails/shopify_logo.png" alt="Shopify Logo">
+        <img src="thumbnails/lua_logo.png" alt="Lua Logo">
     </div>
+    
 
     <div id="container-portfolio">
         <h2 class="title">My Projects</h2>
@@ -256,7 +289,10 @@
                 <p>
                     I decided it would be time to make a cool website!
                     <br>This website is also hosted on 281107.xyz
-                    <br><br>
+                    <br><br><br>
+                    <code class="updateTimeWebsite">
+                        Updated 0 minutes ago
+                    </code>
                 </p>
                 <a href="https://github.com/ohusq/ohusq.github.io" target="_blank">Learn More</a>
             </div>
@@ -266,7 +302,10 @@
                 <p>
                     This is a project I made in a rush and is not that good actually
                     but I have to put something here right... 🤷
-                    <br><br>
+                    <br><br><br>
+                    <code class="updateTimeUserGen">
+                        Updated 0 minutes ago
+                    </code>
                 </p>
                 <a href="https://github.com/ohusq/username-gen">Learn More</a>
             </div>
@@ -277,13 +316,16 @@
                     Got accepted to work on a shopify website, using custom liquid elements
                     and using custom CSS for some images As of <code>16th of June 2024</code>
                     it has been finished completely!
+                    <br><br>
+                    <code class="updateTimeKoster">
+                        Updated 0 minutes ago
+                    </code>
                 </p>
                 <a href="https://kosterstaphorst.nl" target="_blank">View the Website</a>
             </div>
         </div>
     </div>
     
-    <!-- Contact section -->
     <div class="container-contact">
         <h2 class="title"><a href="mailto:mennom2007@gmail.com">Contact Me</a></h2>
     </div>
@@ -291,5 +333,109 @@
     <footer>
         &copy; 2024 ohusq. All rights reserved.
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.querySelector('.nav-links.mobile');
+            if (mobileMenu.style.display === 'flex') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'flex';
+            }
+        }
+
+        function getLastCommit(repo) {
+    // GitHub API URL to fetch commit information
+    const githubApiUrl = `https://api.github.com/repos/ohusq/${repo}/commits/master`;
+
+    // Fetch data from GitHub API
+    return fetch(githubApiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Extract the commit date from the JSON data
+            const commitDateStr = data.commit.author.date;
+
+            // Parse the commit date string into a Date object
+            const commitDate = new Date(commitDateStr);
+
+            // Get the current date
+            const currentDate = new Date();
+
+            // Calculate the difference in milliseconds
+            const dateDifferenceMs = currentDate - commitDate;
+
+            // Helper function to format time difference
+            function formatTimeAgo(milliseconds) {
+                // Convert milliseconds to seconds
+                const seconds = Math.floor(milliseconds / 1000);
+
+                if (seconds < 60) {
+                    return `Updated ${seconds} seconds ago`;
+                }
+
+                // Convert seconds to minutes
+                const minutes = Math.floor(seconds / 60);
+
+                if (minutes < 60) {
+                    return `Updated ${minutes} minutes ago`;
+                }
+
+                // Convert minutes to hours
+                const hours = Math.floor(minutes / 60);
+
+                if (hours < 24) {
+                    return `Updated ${hours} hours ago`;
+                }
+
+                // Convert hours to days
+                const days = Math.floor(hours / 24);
+
+                if (days < 30) {
+                    return `Updated ${days} days ago`;
+                }
+
+                // Convert days to months
+                const months = Math.floor(days / 30);
+
+                if (months < 12) {
+                    return `Updated ${months} months ago`;
+                }
+
+                // Convert months to years
+                const years = Math.floor(months / 12);
+
+                return `Updated ${years} years ago`;
+            }
+
+            // Format and return the time ago message
+            return formatTimeAgo(dateDifferenceMs);
+
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            return "Error fetching data"; // Handle error case gracefully
+        });
+        }
+
+
+        // updateTimeUserGen, updateTimeWebsite, updateTimeKoster
+
+        getLastCommit("ohusq.github.io").then(websiteCommitDate => {
+            document.querySelector('.updateTimeWebsite').textContent = websiteCommitDate;
+        });
+
+        getLastCommit("username-gen").then(generatorCommitDate => {
+            document.querySelector('.updateTimeUserGen').textContent = generatorCommitDate;
+        });
+
+        const kosterCommitDate = "Unknown, not a Github project!";
+        document.querySelector('.updateTimeKoster').textContent = kosterCommitDate;
+
+    </script>
 </body>
 </html>
