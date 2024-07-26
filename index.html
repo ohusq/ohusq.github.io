@@ -4,7 +4,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
+    
+    <meta name="description" content="A showcase of projects and skills by ohusq. Explore my portfolio to see my latest work in software development and design.">
+    <meta name="keywords" content="ohusq, portfolio, development, projects, skills">
+    <meta name="author" content="ohusq">
+    
+    <!-- Add Open Graph meta tags for better social media integration -->
+    <meta property="og:title" content="ohusq's Portfolio">
+    <meta property="og:description" content="A showcase of projects and skills by ohusq. Explore my portfolio to see my latest work in web development and design.">
+    <meta property="og:image" content="https://281107.xyz/thumbnails/fish-pfp.jpg">
+    <meta property="og:url" content="https://281107.xyz">
+    <meta property="og:type" content="website">
+    
+    <!-- Link to the favicon -->
+    <link rel="icon" href="path-to-favicon.ico" type="image/x-icon">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ohusq's site</title>
     <style>
@@ -382,34 +396,34 @@
                 const minutes = Math.floor(seconds / 60);
 
                 if (minutes < 60) {
-                    return `Updated ${minutes} minutes ago`;
+                    return `Updated ${minutes} minute(s) ago`;
                 }
 
                 // Convert minutes to hours
                 const hours = Math.floor(minutes / 60);
 
                 if (hours < 24) {
-                    return `Updated ${hours} hours ago`;
+                    return `Updated ${hours} hour(s) ago`;
                 }
 
                 // Convert hours to days
                 const days = Math.floor(hours / 24);
 
                 if (days < 30) {
-                    return `Updated ${days} days ago`;
+                    return `Updated ${days} day(s) ago`;
                 }
 
                 // Convert days to months
                 const months = Math.floor(days / 30);
 
                 if (months < 12) {
-                    return `Updated ${months} months ago`;
+                    return `Updated ${months} month(s) ago`;
                 }
 
                 // Convert months to years
                 const years = Math.floor(months / 12);
 
-                return `Updated ${years} years ago`;
+                return `Updated ${years} year(s) ago`;
             }
 
             // Format and return the time ago message
