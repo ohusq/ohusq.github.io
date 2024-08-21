@@ -105,7 +105,33 @@
 
         .container-main {
             text-align: center;
-            padding: 175px 20px 120px 20px; /* THIS IS THE PADDING FOR THE TITLE */
+            padding: 175px 20px 120px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .container-main .left {
+            flex: 1;
+            padding: 20px;
+            text-align: left; /* Align the content to the left */
+        }
+
+        .container-main .right {
+            flex: 1;
+            padding: 20px;
+            text-align: right; /* Align the content to the right */
+        }
+
+        .container-main img {
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+        }
+
+        .contaimer-main .left .portfolio-button {
+            text-align: center;
+            justify-content: center;
         }
 
         .title {
@@ -280,9 +306,14 @@
         </div>
     </header>
     <div class="container-main">
-        <h1 class="title">Hello, I'm ohusq!</h1>
-        <p class="description">I'm a 16 year old developer from the Netherlands</p>
-        <a href="#container-portfolio"><button>My Portfolio</button></a>
+        <div class="left">
+            <h1 class="title">Hello, I'm ohusq!</h1>
+            <p class="description">I'm a 16 year old developer from the Netherlands</p>
+            <a href="#container-portfolio" class="portfolio-button"><button>My Portfolio</button></a>
+        </div>
+        <div class="right">
+            <a href="https://github.com/ohusq" target="_blank"><img src="https://avatars.githubusercontent.com/u/109988692?v=4" alt="Profile Picture"></a>
+        </div>
     </div>
 
     <div class="container-logos">
@@ -302,9 +333,11 @@
             <div class="project project-1">
                 <h3>This website &#x1F60E;</h3>
                 <p>
-                    I decided it would be time to make a cool website!
-                    <br>This website is also hosted on 281107.xyz
-                    <br><br><br>
+                    This website has been made using no frameworks, just plain HTML, CSS and JavaScript.
+                    I hope you like it!
+                    <br>
+                    This website is hosted on the domain <code>281107.xyz</code>
+                    <br><br>
                     <code class="updateTimeWebsite">
                         Updated 0 minutes ago
                     </code>
@@ -318,7 +351,7 @@
                     It generates a string / username based on the given inputs.
                     Then it will check if the username is available via the Roblox API.
 
-                    <br><br>
+                    <br><br><br>
                     <code class="updateTimeUserGen">
                         Updated 0 minutes ago
                     </code>
