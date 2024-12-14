@@ -5,8 +5,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap" rel="stylesheet">
     
-    <meta name="description" content="A showcase of projects and skills by ohusq. Explore my portfolio to see my latest work in software development and design.">
-    <meta name="keywords" content="ohusq, portfolio, development, projects, skills">
+    <meta name="description" content="A framework for Roblox developers to create tycoon games.">
+    <meta name="keywords" content="tycoon, framework, Roblox, development">
     <meta name="author" content="ohusq">
     
     <!-- Add Open Graph meta tags for better social media integration -->
@@ -17,10 +17,10 @@
     <meta property="og:type" content="website">
     
     <!-- Link to the favicon -->
-    <link rel="icon" href="thumbnails/lua_logo.svg" type="image/x-icon">
+    <link rel="icon" href="../thumbnails/lua_logo.svg" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ohusq's site</title>
+    <title>Tycoon Developer Framework</title>
     <style>
         body {
             font-family: 'Nunito', sans-serif;
@@ -137,7 +137,7 @@
         .title {
             font-size: 36px;
             margin-bottom: 20px;
-            text-align: center;
+            text-align: left;
         }
 
         .description {
@@ -219,41 +219,6 @@
             background-color: #0a3e5c;
         }
 
-        /* Contact page styles */
-        .container-contact {
-            padding-left: 20px;
-            padding-right: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 70px;
-            max-width: 600px;
-            
-        }
-
-        .contact-info {
-            font-size: 18px;
-        }
-
-        .contact-info p {
-            text-align: center;
-        }
-
-        .container-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px; /* Adjust spacing between images */
-            flex-wrap: wrap; /* Allow images to wrap to the next line */
-            padding: 20px; /* Optional: Add padding around the logos */
-        }
-
-        .container-logos img {
-            max-width: 100%;
-            height: auto;
-            max-height: 150px; /* Adjust the maximum height of the logos */
-        }
-
 
         @media (max-width: 768px) {
             .hamburger {
@@ -305,84 +270,20 @@
             <a href="https://github.com/ohusq" target="_blank">Github</a>
         </div>
     </header>
+
     <div class="container-main">
         <div class="left">
-            <h1 class="title">Hello, I'm ohusq!</h1>
-            <p class="description">I'm a 17 year old developer from the Netherlands</p>
-            <a href="#container-portfolio" class="portfolio-button"><button>My Portfolio</button></a>
+            <h1 class="title">Tycoon Developer Framework</h1>
+            <p class="description">
+                A framework for Roblox developers to create tycoon games. It includes leaderstats, floors and dependencies. Adding buttons, tools, and more is easy with no scripting required.
+            </p>
+            <a href="https://create.roblox.com/store/asset/115815219496151/Roblox-Tycoon-Development-Kit" target="_blank" style="align-items: center;">
+                <button>View on Roblox</button>
+            </a>
         </div>
         <div class="right">
-            <a href="https://github.com/ohusq" target="_blank"><img src="https://avatars.githubusercontent.com/u/109988692?v=4" alt="Profile Picture"></a>
+            <iframe width="100%" height="550px" src="https://www.youtube.com/embed/xMzH7m0VUgY" frameborder="0" allowfullscreen></iframe>
         </div>
-    </div>
-
-    <div class="container-logos">
-        <img src="thumbnails/Cplusplus_logo.png" alt="C++ Logo">
-        <img src="thumbnails/css_logo.png" alt="CSS Logo">
-        <img src="thumbnails/html_logo.png" alt="HTML Logo">
-        <img src="thumbnails/git_logo.png" alt="Git Logo">
-        <img src="thumbnails/python_logo.png" alt="Python Logo">
-        <img src="thumbnails/shopify_logo.png" alt="Shopify Logo">
-        <img src="thumbnails/lua_logo.svg" alt="Lua Logo" width="150">
-    </div>
-    
-
-    <div id="container-portfolio">
-        <h2 class="title">My Projects</h2>
-        <div class="projects">
-            <div class="project project-1">
-                <h3>This website &#x1F60E;</h3>
-                <p>
-                    This website has been made using no frameworks, just plain HTML, CSS and JavaScript.
-                    I hope you like it!
-                    <br>
-                    This website is hosted on the domain <code>281107.xyz</code>
-                    <br><br>
-                </p>
-                <a href="https://github.com/ohusq/ohusq.github.io" target="_blank">Learn More</a>
-            </div>
-
-            <div class="project project-2">
-                <h3>Roblox Username Generator</h3>
-                <p>
-                    It generates a string / username based on the given inputs.
-                    Then it will check if the username is available via the Roblox API.
-
-                    <br><br>
-                </p>
-                <a href="https://github.com/ohusq/username-gen" target="_blank">Learn More</a>
-            </div>
-
-            <div class="project project-3">
-                <h3>Koster ICT Website</h></h3>
-                <p>
-                    Got accepted to work on a shopify website, using custom liquid elements
-                    and using custom CSS for some images As of <code>16th of June 2024</code>
-                    it has been finished completely!
-                    <br><br>
-                </p>
-                <a href="https://kosterstaphorst.nl" target="_blank">View the Website</a>
-            </div>
-            <!-- Scuffed but I haven't focused on web dev since this website got published :) -->
-            <div class="project" style="background-color: transparent; border-style: none; box-shadow: none;"></div>
-            <div class="project project-4">
-                <h3>Tycoon Developer Framework</h3>
-                <p>
-                    A framework for Roblox developers to create tycoon games.<br>
-                    It includes a save system, gamepasses, and a shop system.<br>
-                    Adding buttons, tools, and more is easy with no scripting required.
-                    <br><br>
-                </p>
-                <a href="/portfolio/tycoon-framework.html">Learn More</a>
-            </div>
-            <div class="project" style="background-color: transparent; border-style: none; box-shadow: none;"></div>
-
-        </div>
-    </div>
-    
-    <div class="container-contact">
-        <h2 class="title"><a href="mailto:mennom2007@gmail.com">Contact Me</a></h2>
-        <p class="disclaimer">Do not send me advertisements.</p>
     </div>
 
     <footer>
