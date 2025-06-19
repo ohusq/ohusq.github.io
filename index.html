@@ -1,404 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menno | Software Developer</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap" rel="stylesheet">
-    
-    <meta name="description" content="A showcase of projects and skills by ohusq. Explore my portfolio to see my latest work in software development and design.">
-    <meta name="keywords" content="ohusq, portfolio, development, projects, skills">
-    <meta name="author" content="ohusq">
-    
-    <!-- Add Open Graph meta tags for better social media integration -->
-    <meta property="og:title" content="ohusq's Portfolio">
-    <meta property="og:description" content="A showcase of projects and skills by ohusq. Explore my portfolio to see my latest work in web development and design.">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/109988692?v=4">
-    <meta property="og:url" content="https://281107.xyz">
-    <meta property="og:type" content="website">
-    
-    <!-- Link to the favicon -->
-    <link rel="icon" href="thumbnails/lua_logo.svg" type="image/x-icon">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ohusq's site</title>
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-            background-color: #f0f4f8;
-            color: #2c3e50;
-            margin: 0;
-            line-height: 1.6;
-            display: grid;
-            place-items: center;
-            min-height: 100vh;
-            margin-bottom: 25px; /* margin for contact footer */
-        }
-
-        a {
-            text-decoration: none;
-            color: #0f507b;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #ffdd57;
-        }
-
-        header {
-            background-color: rgb(71, 163, 255);
-            color: #ffffff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .name {
-            font-size: 24px;
-            font-weight: 600;
-            margin-left: 15px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 15px;
-            margin-right: 15px;
-        }
-
-        .nav-links a {
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .bar {
-            height: 3px;
-            width: 25px;
-            background-color: white;
-            margin: 4px 0;
-            transition: 0.4s;
-        }
-
-        .nav-links.mobile {
-            display: none;
-            flex-direction: column;
-            gap: 0;
-            width: 100%;
-        }
-
-        .nav-links.mobile a {
-            padding: 10px;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .container-main {
-            text-align: center;
-            padding: 175px 20px 120px 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .container-main .left {
-            flex: 1;
-            padding: 20px;
-            text-align: left; /* Align the content to the left */
-        }
-
-        .container-main .right {
-            flex: 1;
-            padding: 20px;
-            text-align: right; /* Align the content to the right */
-        }
-
-        .container-main img {
-            border-radius: 50%;
-            max-width: 100%;
-            height: auto;
-            max-height: 300px;
-        }
-
-        .contaimer-main .left .portfolio-button {
-            text-align: center;
-            justify-content: center;
-        }
-
-        .title {
-            font-size: 36px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .description {
-            font-size: 20px;
-            margin-bottom: 40px;
-        }
-
-        button {
-            background-color: #1567ff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            padding: 15px 30px;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #0a3e5c;
-        }
-
-        button:focus {
-            outline: none;
-        }
-
-        footer {
-            background-color: #3498db;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        #container-portfolio {
-            padding: 70px 20px 25px;
-        }
-
-        .projects {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .project {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 10px;
-            flex: 1 1 calc(30% - 40px);
-            text-align: center;
-        }
-
-        .project h3 {
-            margin-top: 0;
-            font-size: 24px;
-        }
-
-        .project p {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .project a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #1567ff;
-            color: white;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .project a:hover {
-            background-color: #0a3e5c;
-        }
-
-        /* Contact page styles */
-        .container-contact {
-            padding-left: 20px;
-            padding-right: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 70px;
-            max-width: 600px;
-            
-        }
-
-        .contact-info {
-            font-size: 18px;
-        }
-
-        .contact-info p {
-            text-align: center;
-        }
-
-        .container-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px; /* Adjust spacing between images */
-            flex-wrap: wrap; /* Allow images to wrap to the next line */
-            padding: 20px; /* Optional: Add padding around the logos */
-        }
-
-        .container-logos img {
-            max-width: 100%;
-            height: auto;
-            max-height: 150px; /* Adjust the maximum height of the logos */
-        }
-
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-links.mobile {
-                display: none;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .container-main {
-                padding: 140px 20px 100px 20px;
-            }
-
-            .projects {
-                flex-direction: column;
-            }
-
-            .project {
-                flex: 1 1 100%;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <a href="/index.html" class="name">Menno | ohusq</a>
-        <div class="nav-links">
-            <a href="mailto:mennom2007@gmail.com">Contact</a>
-            <a href="/index.html">Home</a>
-            <a href="https://github.com/ohusq" target="_blank">Github</a>
-        </div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="nav-links mobile">
-            <a href="/index.html">Home</a>
-            <a href="mailto:mennom2007@gmail.com">Contact</a>
-            <a href="https://github.com/ohusq" target="_blank">Github</a>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#home" class="nav-logo">Menno<span class="dot">.</span></a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
-    <div class="container-main">
-        <div class="left">
-            <h1 class="title">Hello, I'm ohusq!</h1>
-            <p class="description">I'm a 17 year old developer from the Netherlands</p>
-            <a href="#container-portfolio" class="portfolio-button"><button>My Portfolio</button></a>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <h1 class="anim-slide-fade">Hi, I'm Menno. <img
+  src="https://flagcdn.com/64x48/nl.png"
+  srcset="https://flagcdn.com/128x96/nl.png 2x,
+    https://flagcdn.com/192x144/nl.png 3x""
+  alt="Netherlands">
+            </h1>
+                    <p class="anim-slide-fade-delay-1">Software Developer & Tech Enthusiast</p>
+                    <a href="#projects" class="btn anim-slide-fade-delay-2">View My Work</a>
+                </div>
+                <div class="hero-image anim-reveal">
+                    <!-- IMPORTANT: Replace with your photo. Must be named hero-photo.jpg -->
+                    <img src="images/photo.jpg" alt="A photo of Menno">
+                </div>
+            </div>
+            <a href="#about" class="scroll-down-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title anim-hidden">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text anim-hidden">
+                        <p>
+                            I'm a Software Developer with a passion for automation and creating efficient solutions. With over 3 years of experience in <strong>IT, automation and software development</strong>, I've worked on a variety of projects ranging from <strong>web applications</strong> to <strong>game development</strong>.
+                        </p>
+                        <p>
+                            My journey started with a fascination for how computers worked and has evolved into a career where I can combine creativity with my skills.
+                        </p>
+                    </div>
+                    <div class="skills-list anim-hidden">
+                        <h3>My Toolkit:</h3>
+                        <div class="skills-grid">
+                            <span>Roblox Lua</span><span>Python</span><span>Requests</span>
+                            <span>Frontend</span><span>Backend</span><span>SQLite</span>
+                            <span>Database Design</span><span>Matplotlib</span><span>Numpy</span>
+                            <span>Seaborn</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title anim-hidden">My Creations</h2>
+                <div class="project-grid">
+
+                    <!-- Project Card 1 -->
+                    <div class="project-card anim-hidden">
+                        <span class="project-icon"><i class="fas fa-industry"></i></span>
+                        <div class="card-content">
+                            <h3>Roblox Tycoon Framework</h3>
+                            <p>A framework for Roblox developers to create tycoon games. It includes a save system, gamepasses, and a shop system. Adding buttons, tools, and more is easy with no scripting required.</p>
+                            <div class="project-tags">
+                                <span>Roblox</span><span>Game Dev</span><span>Lua</span><span>Server / Client</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://create.roblox.com/store/asset/115815219496151/Roblox-Tycoon-Development-Kit" target="_blank" class="icon-link"><i class="fa-solid fa-expand"></i> View Asset</a>
+                                <a href="https://www.youtube.com/watch?v=xMzH7m0VUgY" target="_blank" class="icon-link"><i class="fa-brands fa-youtube"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card anim-hidden">
+                         <span class="project-icon"><i class="fab fa-discord"></i></span>
+                        <div class="card-content">
+                            <h3>Koster ICT Website</h3>
+                            <p>Got accepted to work on a shopify website, using custom liquid elements and using custom CSS for some images</p>
+                            <div class="project-tags">
+                                <span>Liquid</span><span>API</span><span>Shopify</span><span>CSS</span><span>HTML</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://kosterstaphorst.nl" target="_blank" class="icon-link"><i class="fas fa-external-link-alt"></i> View Website</a>                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card anim-hidden">
+                         <span class="project-icon"><i class="fas fa-server"></i></span>
+                        <div class="card-content">
+                            <h3>Roblox Username Generator</h3>
+                            <p>It generates a string / username based on the given inputs. Then it will check if the username is available via the Roblox API.</p>
+                            <div class="project-tags">
+                                <span>Python</span><span>Requests</span><span>Automation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ohusq/Username-Gen" target="_blank" class="icon-link"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="project-card anim-hidden">
+                         <span class="project-icon"><i class="fas fa-code"></i></span>
+                        <div class="card-content">
+                            <h3>Personal Portfolio (menno.store)</h3>
+                            <p>My previous portfolio website, built with HTML CSS and a tiny bit of JavaScript. A showcase of my skills and projects.</p>
+                            <div class="project-tags">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ohusq/ohusq.github.io" target="_blank" class="icon-link"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://menno.online" target="_blank" class="icon-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="contact-section">
+            <div class="container text-center">
+                <h2 class="section-title anim-hidden">Get In Touch</h2>
+                <p class="contact-subtitle anim-hidden">I'm currently open to new opportunities and collaborations. <br>Feel free to reach out!</p>
+                <a class="btn anim-hidden">Discord: @ohusq</a>
+                <div class="social-links anim-hidden">
+                    <a href="https://github.com/ohusq" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://t.me/ohusq" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://instagram.com/mennomeinen" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Menno. Designed with pain and agony.</p>
         </div>
-        <div class="right">
-            <a href="https://github.com/ohusq" target="_blank"><img src="https://avatars.githubusercontent.com/u/109988692?v=4" alt="Profile Picture"></a>
-        </div>
-    </div>
-
-    <div class="container-logos">
-        <img src="thumbnails/Cplusplus_logo.png" alt="C++ Logo">
-        <img src="thumbnails/css_logo.png" alt="CSS Logo">
-        <img src="thumbnails/html_logo.png" alt="HTML Logo">
-        <img src="thumbnails/git_logo.png" alt="Git Logo">
-        <img src="thumbnails/python_logo.png" alt="Python Logo">
-        <img src="thumbnails/shopify_logo.png" alt="Shopify Logo">
-        <img src="thumbnails/java_logo.webp" alt="Java Logo">
-        <img src="thumbnails/lua_logo.svg" alt="Lua Logo" width="150">
-    </div>
-    
-
-    <div id="container-portfolio">
-        <h2 class="title">My Projects</h2>
-        <div class="projects">
-            <div class="project project-1">
-                <h3>This website &#x1F60E;</h3>
-                <p>
-                    This website has been made using no frameworks, just plain HTML, CSS and JavaScript.
-                    I hope you like it!
-                    <br>
-                    This website is hosted on the domain <code>281107.xyz</code>
-                    <br><br>
-                </p>
-                <a href="https://github.com/ohusq/ohusq.github.io" target="_blank">Learn More</a>
-            </div>
-
-            <div class="project project-2">
-                <h3>Roblox Username Generator</h3>
-                <p>
-                    It generates a string / username based on the given inputs.
-                    Then it will check if the username is available via the Roblox API.
-
-                    <br><br>
-                </p>
-                <a href="https://github.com/ohusq/username-gen" target="_blank">Learn More</a>
-            </div>
-
-            <div class="project project-3">
-                <h3>Koster ICT Website</h></h3>
-                <p>
-                    Got accepted to work on a shopify website, using custom liquid elements
-                    and using custom CSS for some images As of <code>16th of June 2024</code>
-                    it has been finished completely!
-                    <br><br>
-                </p>
-                <a href="https://kosterstaphorst.nl" target="_blank">View the Website</a>
-            </div>
-            <!-- Scuffed but I haven't focused on web dev since this website got published :) -->
-            <div class="project" style="background-color: transparent; border-style: none; box-shadow: none;"></div>
-            <div class="project project-4">
-                <h3>Tycoon Developer Framework</h3>
-                <p>
-                    A framework for Roblox developers to create tycoon games.<br>
-                    It includes a save system, gamepasses, and a shop system.<br>
-                    Adding buttons, tools, and more is easy with no scripting required.
-                    <br><br>
-                </p>
-                <a href="/portfolio/tycoon-framework.html">Learn More</a>
-            </div>
-            <div class="project" style="background-color: transparent; border-style: none; box-shadow: none;"></div>
-
-        </div>
-    </div>
-    
-    <div class="container-contact">
-        <h2 class="title"><a href="mailto:mennom2007@gmail.com">Contact Me</a></h2>
-        <p class="disclaimer">Do not send me advertisements.</p>
-    </div>
-
-    <footer>
-        &copy; 2024 ohusq. All rights reserved.
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.querySelector('.nav-links.mobile');
-            if (mobileMenu.style.display === 'flex') {
-                mobileMenu.style.display = 'none';
-            } else {
-                mobileMenu.style.display = 'flex';
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
