@@ -1,3 +1,3 @@
 # INFO
 
-All images are free for commercial
+This repository features my website hosted which is hosted [here](https://menno.online/)
