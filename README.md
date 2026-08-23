@@ -1,3 +1,3 @@
-# INFO
+# My portfolio
 
-This repository features my website hosted which is hosted [here](https://menno.online/)
+Really cool portfolio, right?
